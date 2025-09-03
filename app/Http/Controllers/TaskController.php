@@ -19,4 +19,8 @@ class TaskController extends Controller
 
         return response()->json($task, 201);
     }
+
+    public function test_ci() {
+        echo "Continous Integration";
+    }
 }
