@@ -42,6 +42,9 @@ jobs:
       - name: Generate key
         run: php artisan key:generate
 
+      - name: Clear caches
+        run: php artisan config:clear && php artisan route:clear
+
       - name: Run migrations
         env:
           DB_CONNECTION: mysql
@@ -53,4 +56,4 @@ jobs:
         run: php artisan migrate --force
 
       - name: Run Tests
-        run: php artisan test --verbose
+        run: php artisan test
